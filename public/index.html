@@ -1,65 +1,70 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
 		<title>wingflex demo</title>
-
+		<meta name="description" content="wingflex — a web proxy demo by Plixy" />
 		<link rel="shortcut icon" content="favicon.webp" />
-	
 		<script src="/scram/scramjet.all.js"></script>
 		<script src="/baremux/index.js"></script>
-		
 		<link rel="stylesheet" href="index.css" />
 		<script src="register-sw.js" defer></script>
 		<script src="search.js" defer></script>
 		<script src="index.js" defer></script>
 	</head>
-
 	<body>
-		<div title="Scramjet Logo" class="flex-center logo-wrapper header-center">
-			<img class="logo" src="sj.png" alt="Scramjet" />
-			<h1>boiz | demo</h1>
-		</div>
-		<div class="flex-center desc left-margin">
-			<p>
-				Scramjet is an experimental interception based web proxy designed to
-				evade internet censorship, bypass arbitrary web browser restrictions and
-				innovate web proxy technologies.
-			</p>
+		<div class="flex-center logo-wrapper header-center">
+			<h1>wingflex</h1>
+			<p class="tagline">demo by <span class="brand">plixy</span></p>
 		</div>
 
 		<form id="sj-form" class="flex-center">
-			<input
-				id="sj-search-engine"
-				value="https://www.google.com/search?q=%s"
-				type="hidden"
-			/>
-			<input id="sj-address" type="text" placeholder="Search the web freely" />
+			<input id="sj-search-engine" value="https://www.google.com/search?q=%s" type="hidden" />
+			<div class="search-box">
+				<input id="sj-address" type="text" placeholder="Search with privacy..." autocomplete="off" />
+				<div class="search-actions">
+					<button type="submit" class="send-btn" title="Send">
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+							<line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>
+						</svg>
+					</button>
+				</div>
+			</div>
 		</form>
-		<div class="desc left-margin">
+
+		<!-- Quick-access site buttons -->
+		<div class="quicklinks flex-center">
+			<button class="ql-btn" onclick="document.getElementById('sj-address').value='play.geforcenow.com'">
+				<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+				GeForce Now
+			</button>
+			<button class="ql-btn" onclick="document.getElementById('sj-address').value='eaglercraft.com'">
+				<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+				Eaglercraft
+			</button>
+			<button class="ql-btn" onclick="document.getElementById('sj-address').value='youtube.com'">
+				<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+				YouTube
+			</button>
+			<button class="ql-btn" onclick="document.getElementById('sj-address').value='duckduckgo.com'">
+				<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+				DuckDuckGo
+			</button>
+			<button class="ql-btn" onclick="document.getElementById('sj-address').value='spotify.com'">
+				<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 11.7c2.6-1 5.5-.9 8 .4"/><path d="M7 14.7c2.2-.8 4.6-.8 6.8.3"/><path d="M9 17.5c1.7-.6 3.5-.6 5.2.2"/></svg>
+				Spotify
+			</button>
+		</div>
+
+		<div class="desc left-margin flex-center">
 			<p id="sj-error"></p>
 			<pre id="sj-error-code"></pre>
 		</div>
+
 		<footer>
 			<div>
-				<a
-					title="The Mercury Workshop GitHub organization"
-					href="https://github.com/MercuryWorkshop"
-					>Mercury Workshop</a
-				>
-				<a
-					title="The example demo app for Scramjet"
-					href="https://github.com/MercuryWorkshop/Scramjet-Demo"
-					>GitHub</a
-				>
-				<a title="License information" href="credits.html">Credits</a>
-			</div>
-			<div>
-				<span>Scramjet &copy; MW 2025</span>
+				<span>wingflex &copy; Plixy 2025</span>
 			</div>
 		</footer>
 	</body>
