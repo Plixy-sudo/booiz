@@ -11,12 +11,12 @@ The demo implementation of <a href="https://github.com/MercuryWorkshop/scramjet"
 ```
 
 Install dependencies
-
+```
 
 pnpm install
-
+```
 Run the server
-
+```
 
 pnpm start
 ```
