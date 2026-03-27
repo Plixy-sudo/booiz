@@ -1,4 +1,3 @@
-<p align="center"><img src="https://raw.githubusercontent.com/sahurhub/sahurhub.github.io/tree/main/Objects/logo.png" height="200"></p>
 
 <h1 align="center">wingflex demo</h1>
 
