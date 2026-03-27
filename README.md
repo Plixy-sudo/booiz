@@ -17,7 +17,7 @@ Install dependencies
 
 Run the server
 
-```
+
 pnpm start
 ```
 
