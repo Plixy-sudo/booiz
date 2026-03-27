@@ -14,12 +14,12 @@ Install dependencies
 ```
 
 pnpm install
-```
-Run the server
 
+Run the server
+```
 
 pnpm start
-```
+
 
 Resources for self-hosting:
 
